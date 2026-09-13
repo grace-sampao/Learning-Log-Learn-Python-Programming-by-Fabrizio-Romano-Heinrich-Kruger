@@ -6,6 +6,7 @@ This repository documents my learning journey as I follow along and apply the co
 
 - [🧠 What I learned](#🧠-what-i-learned)
     - [Python objects & object mutability](#python-objects--object-mutability)
+    - [Choosing the right data structure](#choosing-the-right-data-structure)
 - [🌱 Continued Development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -64,6 +65,15 @@ flowchart TD
         value: 43`")
     markdown --> newLines_02
 ```
+
+### Choosing the right data structure
+
+Ease of use, performance and giving precedence to what matters the most within the context at hand strongly determine the data structure to be used.
+
+A good indicator that the appropriate data structure has been used is the nature of the code written in order to manipulate it.
+
+If the code logic comes easily and flows naturally, then the appropriate data structure has been selected. 
+However, if the code gets unnecessarily complicated, then the choice of data structure may need to be reconsidered.
 
 ## 👩🏽‍💻 Author
 
