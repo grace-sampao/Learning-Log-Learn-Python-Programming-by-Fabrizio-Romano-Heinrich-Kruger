@@ -7,6 +7,7 @@ This repository documents my learning journey as I follow along and apply the co
 - [🧠 What I learned](#🧠-what-i-learned)
     - [Python objects & object mutability](#python-objects--object-mutability)
     - [Choosing the right data structure](#choosing-the-right-data-structure)
+    - [Assignment expressions](#assignment-expressions)
 - [🌱 Continued Development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -74,6 +75,61 @@ A good indicator that the appropriate data structure has been used is the nature
 
 If the code logic comes easily and flows naturally, then the appropriate data structure has been selected. 
 However, if the code gets unnecessarily complicated, then the choice of data structure may need to be reconsidered.
+
+### Assignment expressions
+
+These allow binding a value to a name in places where normal assignment statements aren't allowed e.g. in `if` and `while` statements.
+
+Assignment expressions use `:=` (known as the **walrus operator**) instead of the normal assignment operator `=`.
+
+When used in an `if` statement,
+
+```python
+value = 13
+modulus = 5
+
+remainder = value % modulus
+
+if remainder:
+    print(f"Not divisible! The remainder is {remainder}.")
+```
+
+becomes
+
+```python
+...
+
+if remainder := value % modulus:
+    print(f"Not divisible! The remainder is {remainder}.")
+```
+
+When simplifying a `while` loop,
+
+```python
+flavors = ["pistachio", "malaga", "vanilla", "chocolate"]
+prompt: "Choose your flavor: "
+
+print(flavors)
+
+while True:
+    choice = input(prompt)
+    if choice in flavors:
+        break
+    print(f"Sorry, '{choice}' is not a valid option.")
+
+print(f"You chose '{choice}'.")
+```
+
+becomes
+
+```python
+...
+
+while (choice := input(prompt)) not in flavors:
+    print(f"Sorry, '{choice}' is not a valid option.")
+
+print(f"You chose '{choice}'.")
+```
 
 ## 👩🏽‍💻 Author
 
