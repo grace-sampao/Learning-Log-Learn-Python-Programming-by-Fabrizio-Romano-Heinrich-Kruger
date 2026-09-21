@@ -1,3 +1,21 @@
+def fetch_data():
+    None
+
+def parse_data():
+    None
+
+def filter_data():
+    None
+
+def polish_data():
+    None
+
+def analyse():
+    None
+
+def Report():
+    None
+
 def do_report(data_source):
     # fetch and prepare data
     data = fetch_data(data_source)
