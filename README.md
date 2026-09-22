@@ -8,6 +8,7 @@ This repository documents my learning journey as I follow along and apply the co
     - [Python objects & object mutability](#python-objects--object-mutability)
     - [Choosing the right data structure](#choosing-the-right-data-structure)
     - [Assignment expressions](#assignment-expressions)
+    - [Scopes & namespaces](#scopes--namespaces)
 - [🌱 Continued Development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -22,7 +23,7 @@ This repository documents my learning journey as I follow along and apply the co
 - a ```type```
 - a ```value```
 
-Below is an example of an instruction in ```Python```:
+Below is an example of an instruction in `Python`:
 
 ```python
 name = 42
@@ -129,6 +130,20 @@ while (choice := input(prompt)) not in flavors:
     print(f"Sorry, '{choice}' is not a valid option.")
 
 print(f"You chose '{choice}'.")
+```
+
+### Scopes & namespaces
+
+`Python` searches for names in scopes according to the **LEGB** rule: **local**, **enclosing**, **global** and **built-in** scopes.
+
+```mermaid
+---
+title: LEGB
+---
+flowchart BT
+    Global --> Built-in
+    Enclosing --> Global
+    Local --> Enclosing
 ```
 
 ## 👩🏽‍💻 Author
