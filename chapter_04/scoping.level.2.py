@@ -1,8 +1,8 @@
 def outer():
-    test = 1        # outer scope
+    # test = 1        # outer scope
 
     def inner():
-        test = 2    # inner scope
+        # test = 2    # inner scope
         print("inner:", test)
 
     inner()
