@@ -146,6 +146,10 @@ flowchart BT
     Local --> Enclosing
 ```
 
+This shadowing of names can be altered using either of the statements `global` or `nonlocal`.
+
+The `nonlocal` statement changes this behaviour by working in enclosing scopes whereas the `global` statement does so by working in the global scope.
+
 ## 👩🏽‍💻 Author
 
 | Platform | Link |
