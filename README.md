@@ -9,6 +9,7 @@ This repository documents my learning journey as I follow along and apply the co
     - [Choosing the right data structure](#choosing-the-right-data-structure)
     - [Assignment expressions](#assignment-expressions)
     - [Scopes & namespaces](#scopes--namespaces)
+    - [Functions guidelines](#functions-guidelines)
 - [🌱 Continued Development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -149,6 +150,22 @@ flowchart BT
 This shadowing of names can be altered using either of the statements `global` or `nonlocal`.
 
 The `nonlocal` statement changes this behaviour by working in enclosing scopes whereas the `global` statement does so by working in the global scope.
+
+### Functions guidelines
+
+Some guidelines to follow when writing functions include:
+
+- **Functions should do one thing:** easy to describe in one short sentence. Those that do multiple things can be split into smaller functions that do one thing.
+- **Functions should be small:** easier to test and write.
+- **The fewer the input parameters, the better:** a lot of parameters in a function make it harder to manage, among other issues.
+- **Functions should be consistent in their return values:** write functions that return in a consistent way regardless of the logic behind them.
+E.g. returning `False` and `None` are not the same thing even within a Boolean context where they both evaluate to `False`.
+`False` means there is information while `None` means there is no information.
+- **Functions should have no side effects:** **pure functions** are a concept in functional programming that adhere to two main principles:
+    - *Deterministic output:* given the same set of inputs the output produced will always be the same.
+    The function's behaviour is not dependent on any external or global state that might change during execution.
+    - *No side effects:* do not cause any observable side effects in the system.
+    They do not alter any external state e.g. modifying global variables or performing I/O operations like reading from or writing to a file or the display.
 
 ## 👩🏽‍💻 Author
 
