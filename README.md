@@ -10,7 +10,7 @@ This repository documents my learning journey as I follow along and apply the co
     - [Assignment expressions](#assignment-expressions)
     - [Scopes & namespaces](#scopes--namespaces)
     - [Functions guidelines](#functions-guidelines)
-- [🌱 Continued Development](#🌱-continued-development)
+- [🌱 Continued development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
 
@@ -166,6 +166,10 @@ E.g. returning `False` and `None` are not the same thing even within a Boolean c
     The function's behaviour is not dependent on any external or global state that might change during execution.
     - *No side effects:* do not cause any observable side effects in the system.
     They do not alter any external state e.g. modifying global variables or performing I/O operations like reading from or writing to a file or the display.
+
+## 🌱 Continued development
+
+- Recursive functions
 
 ## 👩🏽‍💻 Author
 
