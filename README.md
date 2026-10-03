@@ -171,7 +171,7 @@ E.g. returning `False` and `None` are not the same thing even within a Boolean c
 
 - Recursive functions
 - `itertools` module
-- Generator functions
+- Generators (functions & expressions)
 
 ## 👩🏽‍💻 Author
 
