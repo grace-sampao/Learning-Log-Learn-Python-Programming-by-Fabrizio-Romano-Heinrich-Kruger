@@ -221,6 +221,7 @@ The disparity is quite large, I'd like to figure out why. 🤔
 - Recursive functions
 - `itertools` module
 - Generators (functions & expressions)
+- Euclid's algorithm
 
 ## 👩🏽‍💻 Author
 
