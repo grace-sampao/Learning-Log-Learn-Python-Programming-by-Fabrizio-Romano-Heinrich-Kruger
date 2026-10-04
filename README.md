@@ -10,6 +10,7 @@ This repository documents my learning journey as I follow along and apply the co
     - [Assignment expressions](#assignment-expressions)
     - [Scopes & namespaces](#scopes--namespaces)
     - [Functions guidelines](#functions-guidelines)
+    - [`for` loop vs.` list` comprehension vs. generator expression](#for-loop-vs-list-comprehension-vs-generator-expression)
 - [🌱 Continued development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -48,7 +49,7 @@ Below, `age` is a name that is initially set to point to an *`int`* object of va
 Another *`int`* object of value `43` is then created and the name `age` is set to point to it.
 Therefore, `42` was not changed to `43`, but the name `age` was set to point to a different location.
 
-```bash
+```
 >>> age = 42
 >>> id(age)
 4333712608
@@ -166,6 +167,54 @@ E.g. returning `False` and `None` are not the same thing even within a Boolean c
     The function's behaviour is not dependent on any external or global state that might change during execution.
     - *No side effects:* do not cause any observable side effects in the system.
     They do not alter any external state e.g. modifying global variables or performing I/O operations like reading from or writing to a file or the display.
+
+### `for` loop vs.` list` comprehension vs. generator expression
+
+Something interesting to note which warrants a deeper dive is the different results I get on my personal computer when running the example code below from the book:
+
+```python
+from time import time
+
+mx = 5000
+t = time()
+floop = []
+
+for a in range(1, mx):
+    for b in range(a, mx):
+        floop.append(divmod(a, b))
+print("for loop: {:.4f} s".format(time() - t))
+
+t = time()
+compr = [divmod(a, b) for a in range(1, mx) for b in range(a, mx)]
+print("list comprehension: {:.4f} s".format(time() - t))
+
+t = time()
+gener = list(
+    divmod(a, b) for a in range(1, mx) for b in range(a, mx)
+)
+print("generator expression: {:.4f} s".format(time() - t))
+```
+
+The output in the book is as follows:
+
+```
+for loop: 2.3832 s
+list comprehension: 1.6882 s
+generator expression: 1.6525 s
+```
+
+while my computer outputs:
+
+```
+for loop: 22.9278 s
+list comprehension: 70.1239 s
+generator expression: 166.0964 s
+```
+
+The disparity is quite large, I'd like to figure out why. 🤔
+
+> *Accurately measuring and comparing execution times is difficult. <br><br>Measurements can be affected by several factors e.g other processes running on the same computer. <br><br>Performance results are also heavily dependent on the hardware, operating system and Python version. <br><br>📖 pg. 193*
+
 
 ## 🌱 Continued development
 
