@@ -222,6 +222,7 @@ The disparity is quite large, I'd like to figure out why. 🤔
 - `itertools` module
 - Generators (functions & expressions)
 - Euclid's algorithm
+- Decorators (decorator factory)
 
 ## 👩🏽‍💻 Author
 
