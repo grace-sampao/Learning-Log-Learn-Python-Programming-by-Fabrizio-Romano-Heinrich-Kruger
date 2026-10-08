@@ -223,6 +223,7 @@ The disparity is quite large, I'd like to figure out why. 🤔
 - Generators (functions & expressions)
 - Euclid's algorithm
 - Decorators (decorator factory)
+- Metaclasses & metaprogramming
 
 ## 👩🏽‍💻 Author
 
