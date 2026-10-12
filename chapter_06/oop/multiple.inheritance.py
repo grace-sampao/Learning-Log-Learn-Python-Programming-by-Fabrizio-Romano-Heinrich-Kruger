@@ -44,3 +44,9 @@ print(square.area())
 print(square.get_geometric_type())
 
 square.plot(0.93, (74, 75))
+
+print("\n")
+print("-" * 50)
+print("\n")
+
+print(square.__class__.__mro__)
