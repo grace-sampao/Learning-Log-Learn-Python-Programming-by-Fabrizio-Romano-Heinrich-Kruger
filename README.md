@@ -224,6 +224,7 @@ The disparity is quite large, I'd like to figure out why. 🤔
 - Euclid's algorithm
 - Decorators (decorator factory)
 - Metaclasses & metaprogramming
+- `mixins` (popular in web frameworks e.g Django)
 
 ## 👩🏽‍💻 Author
 
