@@ -11,6 +11,7 @@ This repository documents my learning journey as I follow along and apply the co
     - [Scopes & namespaces](#scopes--namespaces)
     - [Functions guidelines](#functions-guidelines)
     - [`for` loop vs.` list` comprehension vs. generator expression](#for-loop-vs-list-comprehension-vs-generator-expression)
+    - [Static & class methods](#static--class-methods)
 - [🌱 Continued development](#🌱-continued-development)
 - [📚 Useful resources](#📚-useful-resources)
 - [👩🏽‍💻 Author](#👩🏽‍💻-author)
@@ -215,6 +216,76 @@ The disparity is quite large, I'd like to figure out why. 🤔
 
 > *Accurately measuring and comparing execution times is difficult. <br><br>Measurements can be affected by several factors e.g other processes running on the same computer. <br><br>Performance results are also heavily dependent on the hardware, operating system and Python version. <br><br>📖 pg. 193*
 
+### Static & class methods
+
+`Python` classes can have attributes in the form of **data**, **instance**, **static** and **class methods**.
+
+Static methods are perfect for grouping functionalities within a class namespace. Moreover, they do not need to be passed an instance when called, unlike instance methods.
+
+An instance method would be called as follows:
+
+```python
+class Rectangle:
+    def __init__(self, side_a, side_b):
+        self.side_a = side_a
+        self.side_b = side_b
+
+    def area(self):
+        return self.side_a * self.side_b
+
+r1 = Rectangle(10, 4)
+print(r1.side_a, r1.side_b)             # 10 4
+print(r1.area())            # 40
+```
+
+Whereas using a static method for the previous code:
+
+```python
+class RectangleUtil:
+    @staticmethod
+    def sides(side_a, side_b):
+        return side_a, side_b
+
+    @staticmethod
+    def area(side_a, side_b)
+        return side_a * side_b
+
+print(RectangleUtil.sides(10, 4))           # (10, 4)  
+print(RectangleUtil.area(10, 4))            # 40
+```
+
+A class method would look as follows:
+
+```python
+class Rectangle:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    @classmethod
+    def from_tuple(cls, sides):
+        return cls(*sides)
+
+    @classmethod
+    def from_point(cls, point):
+        return cls(point.a, point.b)
+
+    def area(self):
+        return self.a * self.b
+
+tuple_ = (10, 4)
+
+rect_01 = Rectangle.from_tuple(tuple_)
+print(rect_01.a, rect_01.b)         # 10 4
+
+rect_02 = Rectangle.from_point(rect_01)
+print(rect_02.a, rect_02.b)         # 10 4
+
+print(rect_01.area())           # 40
+print(rect_02.area())           # 40
+```
+
+A common use case for class methods is to provide factory capability i.e having alternative ways to create instances of the class.
 
 ## 🌱 Continued development
 
