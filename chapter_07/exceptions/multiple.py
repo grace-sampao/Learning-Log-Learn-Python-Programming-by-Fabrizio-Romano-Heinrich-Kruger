@@ -4,5 +4,7 @@ values = ("one", 2)
 
 try:
     q, r = divmod(*values)
-except (ZeroDivisionError, TypeError) as e:
-    print(type(e), e)
+except ZeroDivisionError:
+    print("You tried to divide by zero!")
+except TypeError as e:
+    print(e)
